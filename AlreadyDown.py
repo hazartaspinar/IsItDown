@@ -9,7 +9,7 @@ from rich.table import Table
 def check_http_status(url):
     """Check HTTP response status."""
     try:
-        response = requests.get(url, timeout=5)
+        response = requests.get(f"https://{url}", timeout=5)
         if response.status_code == 200:
             return "Success", "200 OK"
         else:
@@ -33,10 +33,9 @@ def check_tcp_connection(host, port):
     except (socket.timeout, socket.error):
         return "Failed"
 
-def continuous_test(url, port):
+def continuous_test(host, port):
     """Run continuous test using multiple methods."""
-    host = url.replace("http://", "").replace("https://", "").split("/")[0]
-    console.print(f"\n[bold yellow]Starting continuous test on[/bold yellow] [bold cyan]{url}[/bold cyan]...")
+    console.print(f"\n[bold yellow]Starting continuous test on[/bold yellow] [bold cyan]{host}:{port}[/bold cyan]...")
     console.print("[yellow]Press [bold red]Ctrl+C[/bold red] to stop.[/yellow]\n")
 
     table = Table(title="Already Down! - Test Results")
@@ -47,7 +46,7 @@ def continuous_test(url, port):
     try:
         with Live(table, refresh_per_second=0.5) as live:
             while True:
-                http_result, http_details = check_http_status(url)
+                http_result, http_details = check_http_status(host)
                 icmp_result = check_icmp_ping(host)
                 tcp_result = check_tcp_connection(host, port)
 
@@ -89,10 +88,9 @@ def display_banner():
 def interactive_mode():
     """Run the tool in interactive mode."""
     display_banner()
-    url = input("Enter the target domain or IP (default: https://example.com): ").strip() or "https://example.com"
-    port = int(input("Enter the TCP port to check (default: 443): ") or "443")
-
-    continuous_test(url, port)
+    host = input("Enter the target domain or external IP: ").strip()
+    port = int(input("Enter the TCP port to check: "))
+    continuous_test(host, port)
 
 def main():
     interactive_mode()
