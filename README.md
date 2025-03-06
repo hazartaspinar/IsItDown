@@ -16,12 +16,16 @@ If all three methods fail, the tool congratulates you for successfully bringing 
 - Continuous testing with real-time results
 - Interactive mode for ease of use
 
-## 🛠️ Installation
+## 🛠️ Installation & Usage
 To use **Already Down!**, ensure you have Python installed on your system. Then, follow these steps:
 
 ```sh
-# Clone the repository
-
+# Installation
 git clone https://github.com/yourusername/already-down.git
 cd already-down
+
+# Usage
 python3 IsItDown.py
+and then enter a domain or external ip address via port number.
+
+
