@@ -18,6 +18,7 @@ To use **Already Down!**, ensure you have Python installed on your system. Then,
 
 ```sh
 # Clone the repository
+
 git clone https://github.com/yourusername/already-down.git
 cd already-down
 
