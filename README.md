@@ -22,10 +22,10 @@ To use **Already Down!**, ensure you have Python installed on your system. Then,
 ```sh
 # Installation
 git clone https://github.com/hazartaspinar/IsItDown
-cd already-down
+cd IsItDown
 
 # Usage
-python3 IsItDown.py
+python3 AlreadyDown.py
 and then enter a domain or external ip address via port number.
 
 
