@@ -21,4 +21,4 @@ To use **Already Down!**, ensure you have Python installed on your system. Then,
 
 git clone https://github.com/yourusername/already-down.git
 cd already-down
-
+python3 IsItDown.py
