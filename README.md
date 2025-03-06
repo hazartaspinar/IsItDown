@@ -12,7 +12,6 @@ If all three methods fail, the tool congratulates you for successfully bringing 
 - Live status updates using the **Rich** library
 - Continuous testing with real-time results
 - Interactive mode for ease of use
-- ASCII banner for aesthetics 😎
 
 ## 🛠️ Installation
 To use **Already Down!**, ensure you have Python installed on your system. Then, follow these steps:
@@ -22,5 +21,3 @@ To use **Already Down!**, ensure you have Python installed on your system. Then,
 git clone https://github.com/yourusername/already-down.git
 cd already-down
 
-# Install required dependencies
-pip install -r requirements.txt
