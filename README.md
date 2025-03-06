@@ -1,5 +1,3 @@
-# README içeriğini bir dosya olarak kaydetme
-readme_content = """# Already Down! - Server Availability Testing Tool
 
 ## 📌 Introduction
 **Already Down!** is a powerful tool designed to continuously monitor the availability of a target server using multiple testing methods. This tool checks whether a server is down by performing:
